@@ -1,0 +1,180 @@
+@font-face {
+  font-family: ItalicFraunces;
+  src: url(../fonts/Fraunces-VariableFont_SOFT\WONK\opsz\wght.ttf);
+}
+
+@font-face {
+  font-family: Fraunces;
+  src: url(../fonts/Fraunces_9pt-Bold.ttf);
+}
+
+@font-face {
+  font-family: ButtonFraunces;
+  src: url(../fonts/Fraunces_9pt-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+:root {
+  /* button */
+  --cyan: hsl(158, 36%, 37%);
+  /* hover button */
+  --hoverCyan: hsl(156, 42%, 18%);
+  /* title color */
+  --darkBlue: hsl(212, 21%, 14%);
+  /* description */
+  --grayish: hsl(228, 12%, 48%);
+}
+
+body {
+  background-color: hsl(30, 38%, 92%);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  margin: 0 auto;
+}
+
+.image-container,
+.image-container img,
+.detail-box {
+  width: 270px;
+  min-width: 270px;
+  height: 410px;
+  max-width: 270px;
+}
+
+.image-container img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.detail-box {
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.detail-box > * {
+  padding-left: 30px;
+}
+
+#title {
+  font-family: Montserrat;
+  color: var(--grayish);
+  margin: 30px 0 10px 0;
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+
+#name {
+  color: var(--darkBlue);
+  font-family: Fraunces;
+  margin: 10px 0;
+  word-break: break-word;
+  font-size: xx-large;
+  line-height: 30px;
+}
+
+#description {
+  font-family: Montserrat;
+  color: var(--grayish);
+  word-break: break-word;
+  font-size: 14px;
+  margin: 0;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.subprice {
+  display: inline-block;
+  margin: 0;
+}
+
+#first {
+  color: var(--cyan);
+  font-size: xx-large;
+  margin-right: 10px;
+  font-family: Fraunces;
+}
+
+#second {
+  font-family: ItalicFraunces;
+  font-size: 14px;
+  text-decoration: line-through;
+  color: var(--grayish);
+}
+
+button {
+  background-color: var(--cyan);
+  color: hsl(0, 0%, 100%);
+  border: 0;
+  width: 210px;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: ButtonFraunces;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--hoverCyan);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    display: grid;
+    position: unset;
+  }
+
+  .image-container,
+  .image-container img,
+  .detail-box {
+    width: 92vw;
+    min-width: 92vw;
+    max-width: 92vw;
+  }
+
+  .image-container,
+  .image-container img {
+    height: 250px;
+  }
+
+  .image-container img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    object-fit: cover;
+  }
+
+  .detail-box > * {
+    padding-left: 20px;
+  }
+
+  #description {
+    width: 82vw;
+  }
+
+  button {
+    width: 80vw;
+  }
+}
